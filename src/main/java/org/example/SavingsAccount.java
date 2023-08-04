@@ -3,7 +3,7 @@ package org.example;
 public class SavingsAccount extends BankAccount {
 
     public SavingsAccount(String name, double balance) {
-        super(name, balance);
+        super(name, balance, "Savings");
     }
 
     @Override

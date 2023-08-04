@@ -3,6 +3,7 @@ package org.example;
 public class BankAccount {
     private String name;
     private double balance;
+    private String type;
 
     public String getName() {
         return name;
@@ -20,6 +21,14 @@ public class BankAccount {
         this.balance = balance;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public void deposit(double money){
         this.balance += money;
     };
@@ -31,9 +40,10 @@ public class BankAccount {
         }
     };
 
-    public BankAccount(String name, double balance) {
+    public BankAccount(String name, double balance, String type) {
         this.name = name;
         this.balance = balance;
+        this.type = type;
     }
 }
 
