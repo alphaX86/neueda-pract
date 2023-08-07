@@ -1,4 +1,4 @@
-package org.example;
+package org.example.BankAccount;
 
 public class BankAccount {
     private String name;

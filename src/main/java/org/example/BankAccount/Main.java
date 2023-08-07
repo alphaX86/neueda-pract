@@ -1,9 +1,8 @@
-package org.example;
+package org.example.BankAccount;
 
 import com.mongodb.client.*;
 import org.bson.Document;
 
-import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;

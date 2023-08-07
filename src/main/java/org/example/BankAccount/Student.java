@@ -1,4 +1,4 @@
-package org.example;
+package org.example.BankAccount;
 
 interface T1 {
     public void printTest();
