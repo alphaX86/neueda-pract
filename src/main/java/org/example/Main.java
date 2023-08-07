@@ -243,51 +243,5 @@ public class Main {
         }
         return x;
     }
-
-
-
-    private static void addToDatabase(String student, int mark){
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn= DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/exams","root","c0nygre");
-            PreparedStatement stmt=conn.prepareStatement(
-                    "INSERT INTO exammarks(name, mark) VALUES(?,?)");
-            stmt.setString(1,student);
-            stmt.setInt(2,mark);
-            stmt.executeUpdate();
-            conn.close();
-        }catch(SQLException e){
-            System.out.println("Database Exception");
-            System.out.println(e.getMessage());
-        }
-        catch(ClassNotFoundException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    private static void getResults() {
-        try {
-            System.out.println("***** Results from the Database *****");
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/exams", "root", "c0nygre");
-            Statement stmt = conn.createStatement();
-            ResultSet examResults = stmt.executeQuery("SELECT * FROM exammarks");
-            while (examResults.next()) {
-                System.out.printf("%s got %d\n",
-                        examResults.getString("name"),
-                        examResults.getInt("mark"));
-            }
-            examResults.close();
-            conn.close();
-        } catch (SQLException e) {
-            System.out.println("Database Exception");
-            System.out.println(e.getMessage());
-        } catch (ClassNotFoundException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
 }
 
